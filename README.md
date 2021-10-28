@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Useful Resurces
+
+[Project Description](https://github.com/jayres/IDM-DynamicWeb/blob/master/midterm/ProjectDescription.md) \
+
+[API List](https://github.com/jayres/IDM-DynamicWeb/tree/master/midterm \
+
+https://www.audiomack.com/data-api/docs#general \
+
+https://github.com/public-apis/public-apis\
+
+http://colormind.io/api-access/ \
+
+https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search \
+
+https://github.com/Rob--W/cors-anywhere\
+
 ## Available Scripts
 
 In the project directory, you can run:
