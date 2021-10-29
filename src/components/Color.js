@@ -8,7 +8,11 @@ function Color({ r, g, b }) {
           backgroundColor: `rgba(${r}, ${g}, ${b}, 1)`,
           height: `200px`,
         }}
-      ></div>
+      >
+        R: {r}
+        G: {g}
+        B: {b}
+      </div>
     </div>
   );
 }

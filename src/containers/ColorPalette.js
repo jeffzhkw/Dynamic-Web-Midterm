@@ -35,6 +35,9 @@ function ColorPalette() {
       {colorList.map((aColor, i) => {
         return <Color r={aColor[0]} g={aColor[1]} b={aColor[2]} />;
       })}
+      <p>
+        <a href="/">To Home</a>
+      </p>
     </div>
   );
 }

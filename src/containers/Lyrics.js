@@ -11,6 +11,7 @@ function Lyrics() {
   const [lyricsData, setLyricsData] = useState(); //can update in onClick
   const [artist, setArtist] = useState();
   const [title, setTitle] = useState();
+  const [searchResult, setSearchResult] = useState(0); //0: no entry, 1: success, 2: not found
   const lyricsURL = `https://private-anon-f16fbaef18-lyricsovh.apiary-proxy.com/v1/${artist}/${title}}`;
 
   let query = useQuery();
@@ -18,25 +19,29 @@ function Lyrics() {
   useEffect(() => {
     const artistInput = query.get("artist");
     const titleInput = query.get("songName");
-    console.log(artistInput, titleInput);
     if (artistInput) {
       setArtist(artistInput);
     }
     if (titleInput) {
       setTitle(titleInput);
     }
-  });
+  }, [query]);
+
   useEffect(() => {
-    axios
-      .get(lyricsURL)
-      .then((response) => {
-        console.log(response);
-        setLyricsData(response);
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
-  }, [lyricsURL]);
+    if (artist && title) {
+      axios
+        .get(lyricsURL)
+        .then((response) => {
+          console.log(response);
+          setLyricsData(response);
+          setSearchResult(1);
+        })
+        .catch((error) => {
+          console.warn(error);
+          setSearchResult(2);
+        });
+    }
+  }, [lyricsURL, artist, title]);
 
   const { lyricsContent = "" } = useMemo(() => {
     if (!lyricsData) return {};
@@ -67,8 +72,18 @@ function Lyrics() {
         </div>
         <button type="submit">Submit</button>
       </form>
-      {console.log(lyricsContent)}
-      <LyricsContent content={lyricsContent} />
+      <div>
+        <LyricsContent
+          found={searchResult}
+          artist={artist}
+          title={title}
+          content={lyricsContent}
+        />
+      </div>
+
+      <p>
+        <a href="/">To Home</a>
+      </p>
     </div>
   );
 }
