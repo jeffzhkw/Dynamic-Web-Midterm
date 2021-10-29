@@ -15,6 +15,7 @@ function ColorPalette() {
     axios
       .post(colorURL, JSON.stringify(colorInput))
       .then((response) => {
+        console.log(response);
         setColorData(response.data);
       })
       .catch((error) => {
@@ -30,14 +31,17 @@ function ColorPalette() {
   }, [colorResult]);
 
   return (
-    <div className="aColorWrapper">
-      <p>Hello world from Palette</p>
-      {colorList.map((aColor, i) => {
-        return <Color r={aColor[0]} g={aColor[1]} b={aColor[2]} />;
-      })}
-      <p>
+    <div className="paletteWrapper">
+      <h1>Color Palette</h1>
+      <div className="colorSet">
+        {colorList.map((aColor, i) => {
+          return <Color r={aColor[0]} g={aColor[1]} b={aColor[2]} />;
+        })}
+      </div>
+      <button>Give me another set!</button>
+      <div className="custButton">
         <a href="/">To Home</a>
-      </p>
+      </div>
     </div>
   );
 }

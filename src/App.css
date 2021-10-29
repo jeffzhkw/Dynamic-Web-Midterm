@@ -2,8 +2,53 @@
   box-sizing: border-box;
 }
 
+/* Global: Used across pages */
 .App {
   border: 1px solid black;
-  margin: 25px auto;
-  max-width: 1440px;
+  margin: 5vh auto;
+  max-width: 1000px;
+  height: 85vh;
+}
+.custButton {
+  margin: 10px 10px;
+  border: 1px solid black;
+  padding: 10px 10px;
+}
+
+/* Home.js */
+.homeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homeContent {
+}
+
+/* ColorPalette.js */
+
+.paletteWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.colorSet {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+/* Color.js */
+.aColor {
+}
+
+/* Lyrics.js */
+.lyricsWrapper {
 }

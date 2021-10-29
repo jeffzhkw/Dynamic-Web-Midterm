@@ -52,7 +52,7 @@ function Lyrics() {
 
   return (
     <div className="lyricsWrapper">
-      <p>Hello world from the lyrics</p>
+      <h1>Song Lyrics</h1>
       <form>
         <div>
           <label for="artist">Artist</label>
