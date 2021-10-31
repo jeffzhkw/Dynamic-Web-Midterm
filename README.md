@@ -4,19 +4,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Useful Resurces
 
-[Project Description](https://github.com/jayres/IDM-DynamicWeb/blob/master/midterm/ProjectDescription.md) \
+[Project Description](https://github.com/jayres/IDM-DynamicWeb/tree/master/midterm)
 
-[API List](https://github.com/jayres/IDM-DynamicWeb/tree/master/midterm \
+[API List](https://github.com/public-apis/public-apis)
 
-https://www.audiomack.com/data-api/docs#general \
+[CorsAnywhere](https://github.com/Rob--W/cors-anywhere)
 
-https://github.com/public-apis/public-apis\
+## API used in the project:
 
-http://colormind.io/api-access/ \
+[Colormind](http://colormind.io/api-access/)
 
-https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search \
-
-https://github.com/Rob--W/cors-anywhere\
+[LyricsSovh](https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search)
 
 ## Available Scripts
 
