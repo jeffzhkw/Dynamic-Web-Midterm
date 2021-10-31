@@ -7,29 +7,60 @@
   border: 1px solid black;
   margin: 5vh auto;
   max-width: 1000px;
-  height: 85vh;
+  min-height: 85vh;
+  background-color: #f9f4e7;
 }
+
 .custButton {
-  margin: 10px 10px;
-  border: 1px solid black;
+  display: flex;
   padding: 10px 10px;
+  border: 2px solid black;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.custButton:hover {
+  border-right: 3px solid black;
+  border-bottom: 4px solid black;
+}
+
+.custButton:active {
+  border: 2px solid black;
+}
+
+.custButton > a {
+  text-decoration: none;
+  color: black;
+}
+
+.custButton > a:active {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px;
 }
 
 /* Home.js */
 .homeWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  margin: 25px 0px;
 }
 
 .homeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ColorPalette.js */
@@ -41,14 +72,61 @@
 
 .colorSet {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: repeat(5, 1fr);
+
+  grid-template-columns: repeat(5, 1fr);
 }
 
+.paletteWrapper > button {
+  align-self: center;
+}
 /* Color.js */
 .aColor {
+  display: flex;
+  padding: 4em 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 5%;
+  transition-duration: 0.6s;
+}
+
+.aColor:hover {
+  transform: scale(1.1);
+  transition-duration: 0.6s;
+}
+
+.aColor > span {
+  opacity: 0;
+  transition-duration: 0.8s;
+}
+
+.aColor:hover > span {
+  opacity: 100;
+  transition-duration: 0.8s;
+  font-weight: bold;
 }
 
 /* Lyrics.js */
 .lyricsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.lyricsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: auto 25px;
+}
+
+.lyricsForm > div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 30%;
+  margin-top: 1em;
+}
+/* LyricsConetent */
+.lyricsContentWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }

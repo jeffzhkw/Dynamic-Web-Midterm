@@ -43,47 +43,57 @@ function Lyrics() {
     }
   }, [lyricsURL, artist, title]);
 
-  const { lyricsContent = "" } = useMemo(() => {
-    if (!lyricsData) return {};
-    return {
-      lyricsContent: lyricsData.data.lyrics,
-    };
+  const { lyricsContent } = useMemo(() => {
+    if (!lyricsData) return { lyricsContent: "" };
+    else {
+      return {
+        lyricsContent: lyricsData.data.lyrics,
+      };
+    }
   }, [lyricsData]);
 
   return (
     <div className="lyricsWrapper">
-      <h1>Song Lyrics</h1>
-      <form>
+      <div className="header">
+        <h1>Song Lyrics</h1>
+        <div className="custButton">
+          <a href="/">To Home</a>
+        </div>
+      </div>
+
+      <form className="lyricsForm">
         <div>
-          <label for="artist">Artist</label>
+          <label htmlFor="artist">Artist</label>
+
           <input
             type="text"
             name="artist"
             placeholder="Please enter artist name.."
+            value={artist}
           ></input>
         </div>
+
         <div>
-          <label for="songName">Song Name</label>
+          <label htmlFor="songName">Song Name</label>
+
           <input
             type="text"
             name="songName"
             placeholder="Please enter song name..."
+            value={title}
           ></input>
         </div>
-        <button type="submit">Submit</button>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
-      <div>
-        <LyricsContent
-          found={searchResult}
-          artist={artist}
-          title={title}
-          content={lyricsContent}
-        />
-      </div>
 
-      <p>
-        <a href="/">To Home</a>
-      </p>
+      <LyricsContent
+        found={searchResult}
+        artist={artist}
+        title={title}
+        content={lyricsContent}
+      />
     </div>
   );
 }

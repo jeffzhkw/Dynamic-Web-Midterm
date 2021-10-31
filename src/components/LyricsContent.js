@@ -3,7 +3,7 @@ import React from "react";
 function LyricsContent({ found, content, artist, title }) {
   if (found === 1) {
     return (
-      <div>
+      <div className="lyricsContentWrapper">
         <p>
           Result for {artist} - {title}
         </p>
@@ -11,9 +11,17 @@ function LyricsContent({ found, content, artist, title }) {
       </div>
     );
   } else if (found === 2) {
-    return <p>Lyrics Not Found</p>;
+    return (
+      <div className="lyricsContentWrapper">
+        <p>Lyrics Not Found</p>
+      </div>
+    );
   } else {
-    return <p>Please Enter</p>;
+    return (
+      <div className="lyricsContentWrapper">
+        <p>Please enter the artist and song name.</p>
+      </div>
+    );
   }
 }
 

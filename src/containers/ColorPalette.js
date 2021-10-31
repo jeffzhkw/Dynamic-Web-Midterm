@@ -8,15 +8,14 @@ function ColorPalette() {
     input: ["N", "N", "N", "N", "N"],
   });
 
-  const [colorResult, setColorData] = useState();
+  const [colorResult, setColorResult] = useState();
   const colorURL = "http://colormind.io/api/";
 
   useEffect(() => {
     axios
       .post(colorURL, JSON.stringify(colorInput))
       .then((response) => {
-        console.log(response);
-        setColorData(response.data);
+        setColorResult(response.data);
       })
       .catch((error) => {
         console.warn(error);
@@ -32,16 +31,29 @@ function ColorPalette() {
 
   return (
     <div className="paletteWrapper">
-      <h1>Color Palette</h1>
+      <div className="header">
+        <h1>Color Palette</h1>
+        <div className="custButton">
+          <a href="/">To Home</a>
+        </div>
+      </div>
+
       <div className="colorSet">
         {colorList.map((aColor, i) => {
-          return <Color r={aColor[0]} g={aColor[1]} b={aColor[2]} />;
+          return <Color r={aColor[0]} g={aColor[1]} b={aColor[2]} key={i} />;
         })}
       </div>
-      <button>Give me another set!</button>
-      <div className="custButton">
-        <a href="/">To Home</a>
-      </div>
+
+      <button
+        onClick={() => {
+          setColorInput({
+            model: "default",
+            input: ["N", "N", "N", "N", "N"],
+          });
+        }}
+      >
+        Give me another set!
+      </button>
     </div>
   );
 }
