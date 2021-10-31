@@ -69,7 +69,6 @@ function Lyrics() {
             type="text"
             name="artist"
             placeholder="Please enter artist name.."
-            value={artist}
           ></input>
         </div>
 
@@ -80,7 +79,6 @@ function Lyrics() {
             type="text"
             name="songName"
             placeholder="Please enter song name..."
-            value={title}
           ></input>
         </div>
         <div>
